@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<climat ville="Rouen" annee="2021">
+    <mesure mois="Janvier" >
+        <temperature unite="degree" min="-5" max="13" />
+        <precipitations unite="milimetre" value="125" pourcentage="64" />
+        <episode_neigeux>
+            <jour_neige value="5" >
+                <heure>9h00</heure>
+            </jour_neige>
+            <jour_neige value="16" >
+                <heure>7h00</heure>
+                <heure>9h00</heure>
+            </jour_neige>
+            <jour_neige value="23" >
+                <heure>9h00</heure>
+                <heure>10h00</heure>
+            </jour_neige>
+            <jour_neige value="24" >
+                <heure>10h00</heure>
+                <heure>11h00</heure>
+            </jour_neige>
+        </episode_neigeux>
+    </mesure>
+    <mesure mois="Février" >
+        <temperature unite="degree" min="-7" max="19" />
+        <precipitations unite="milimetre" value="49" pourcentage="-19" />
+    </mesure>
+    <mesure mois="Mars" >
+        <temperature unite="degree" min="-4" max="24" />
+        <precipitations unite="milimetre" value="36.4" pourcentage="46" />
+    </mesure>
+    <mesure mois="Novembre" >
+        <temperature unite="degree" min="-2" max="14" />
+        <precipitations unite="milimetre" value="54" pourcentage="-29" />
+        <episode_neigeux>
+            <jour_neige value="27" >
+                <heure>4h00</heure>
+                <heure>6h00</heure>
+            </jour_neige>
+           
+        </episode_neigeux>
+    </mesure>
+</climat>
