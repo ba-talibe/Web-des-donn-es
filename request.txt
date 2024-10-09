@@ -1,0 +1,6 @@
+/programmes/nation/attribute::nom[../programme]
+//descendant::astronaute/text()[../@role='commandant']
+//descendant::mission/attribute::date[not(../@type='habité')]
+//mission[./@date='1965-01-19' and  (./@type='habité' or not(./@type))]
+//mission/astronaute[./@role='commandant' and ../@nom='Apollo 11']
+//mission/astronaute[./@role='commandant' and ./text()='Neil Armstrong']/parent::mission/astronaute[not(./@role="commandant")]
