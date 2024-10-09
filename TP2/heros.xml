@@ -8,7 +8,7 @@
 		<power id="force">Force physique surhumaine.</power>
 		<power id="precognition">Pouvoir de perception extrasensorielle permettant la prévision d'événements futurs non déductibles de la connaissance du présent.</power>
 	</powers>
-	<!-- <hero id="h-001" birth-year="1962">
+	<hero id="h-001" birth-year="1962">
 		<identity height="1.78" genre="M">
 			<firstname>Peter</firstname>
 			<firstname>Benjamin</firstname>
@@ -46,5 +46,5 @@
 		<species>Kryptonien</species>
 		<abilities>vitesse voler force</abilities>
 		<movies>man_of_steel[2013] justice_league[2017] batman_vs_superman[2016]</movies>
-	</hero> -->
+	</hero>
 </heros>

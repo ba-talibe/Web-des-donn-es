@@ -9,6 +9,66 @@
         </xsd:simpleContent>
     </xsd:complexType>
 
+    <xsd:simpleType name="MoviesName">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\w+(_\w+)*(_\d+)?\[\d{4}\]" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Movies">
+        <xsd:list itemType="MoviesName"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Genre"> 
+        <xsd:restriction base="xsd:string" >
+            <xsd:enumeration value="F"/>
+            <xsd:enumeration value="M"/> 
+            <xsd:enumeration value="NA"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Identity">
+        <xsd:sequence>
+           <xsd:element name="firstname" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+           <xsd:element name="lastname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+           <xsd:choice>
+                <xsd:element name="aliases"  minOccurs="1" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="alias" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+               <xsd:element name="alias" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name="height" use="optional" >
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="\d\.\d{2}"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="genre" type="Genre" use="optional" default="NA"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Hero">
+        <xsd:sequence>
+            <xsd:element 
+                name="identity" 
+                type="Identity" 
+                minOccurs="1" 
+                maxOccurs="1"
+                />
+            <xsd:element name="species" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="abilities" type="xsd:NMTOKENS" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="movies" type="Movies" minOccurs="1" maxOccurs="1">
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID" use="required" />
+        <xsd:attribute name="birth-year" type="xsd:gYear" use="optional"/>
+    </xsd:complexType>
+
     <xsd:element name="heros">
         <xsd:complexType>
             <xsd:sequence>
@@ -19,6 +79,7 @@
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
+                <xsd:element name="hero" type="Hero" minOccurs="1" maxOccurs="unbounded"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
