@@ -4,3 +4,10 @@
 //mission[./@date='1965-01-19' and  (./@type='habité' or not(./@type))]
 //mission/astronaute[./@role='commandant' and ../@nom='Apollo 11']
 //mission/astronaute[./@role='commandant' and ./text()='Neil Armstrong']/parent::mission/astronaute[not(./@role="commandant")]
+//mission[../@nom="Gemini" and number(substring(./@fin, 9)) - number(substring(./@date, 9)) > 4]
+//mission/attribute::nom[not (../astronaute)]
+//programme[../@nom="USA" and position()=last()]/mission[last()]
+//mission[./@nom="Voskhod 2"]/preceding-sibling::mission[1]
+//mission[count(./astronaute) = 1]
+//mission/attribute::nom[number(substring(../@date, 1, 4))>=1970]
+
