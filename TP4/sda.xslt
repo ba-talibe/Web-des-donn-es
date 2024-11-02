@@ -44,7 +44,7 @@
                             <xsl:value-of select="$gain div 1000000"/> Millions USD
                             
                             <!-- <xsl:text> Millions USD</xsl:text>  -->
-
+                           (
                             <xsl:choose>
                                 <xsl:when test="$gain > 1000000000"> 
                                     <img src="star.png" width="20" />
@@ -72,7 +72,7 @@
                                     <img src="star.png" width="20" />
                                 </xsl:otherwise>
                             </xsl:choose>   
-                            
+                            )
                      </p>
                     <b>Role principaux :</b>
                     <ul>
