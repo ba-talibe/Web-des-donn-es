@@ -10,4 +10,3 @@
 //mission[./@nom="Voskhod 2"]/preceding-sibling::mission[1]
 //mission[count(./astronaute) = 1]
 //mission/attribute::nom[number(substring(../@date, 1, 4))>=1970]
-

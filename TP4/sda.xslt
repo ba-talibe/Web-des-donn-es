@@ -3,9 +3,12 @@
     <xsl:output method="html" indent="yes" />
     <xsl:template match="/lord-of-the-rings">
         <html lang="fr">
-            <head></head>
+            <head>
+                <link href="style.css" rel="stylesheet" type="text/css" />
+                <title>Le seigneur des Anneaux</title>
+            </head>
             <body>
-                <h1>les films proposer</h1>
+                <h1>Le seigneur des Anneaux</h1>
                 <xsl:apply-templates select="./films/film" />
             </body>
         </html>
@@ -73,11 +76,12 @@
                      </p>
                     <b>Role principaux :</b>
                     <ul>
+                        <xsl:apply-templates select="./roles/role" />
+                        <!-- <li><i>...</i> - <a href="...">...</a></li>
                         <li><i>...</i> - <a href="...">...</a></li>
                         <li><i>...</i> - <a href="...">...</a></li>
                         <li><i>...</i> - <a href="...">...</a></li>
-                        <li><i>...</i> - <a href="...">...</a></li>
-                        <li><i>...</i> - <a href="...">...</a></li>
+                        <li><i>...</i> - <a href="...">...</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -95,7 +99,7 @@
                 <xsl:attribute name="href">
                     <xsl:value-of select="$actor/wiki-page" />
                 </xsl:attribute>
-                <xsl:value-of select="" />
+                 <xsl:value-of select="$actor/name" /> 
             </a>
         </li>
     </xsl:template>
