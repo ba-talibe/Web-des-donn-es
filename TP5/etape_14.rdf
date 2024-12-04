@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dbp="http://dbpedia.org/property/"
+	xmlns:dbo="http://dbpedia.org/ontology/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:gold="http://purl.org/linguistics/gold/"
+	xmlns:schema="http://schema.org/"
+	xmlns:prov="http://www.w3.org/ns/prov#" >
+
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Marion_Cotillard">
+    <dbp:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1975-09-30</dbp:birthDate>
+    <dbp:partner rdf:resource="http://dbpedia.org/resource/Guillaume_Canet" />
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- 
+sujet                                       ,    prédicat                              ,    objet                                      ,     information vehiculée
+
+http://dbpedia.org/resource/Marion_Cotillard,    http://dbpedia.org/property/birthDate ,    1975-09-30                                  ,    date de naissance
+http://dbpedia.org/resource/Marion_Cotillard,    http://dbpedia.org/property/partner   ,    http://dbpedia.org/resource/Guillaume_Canet ,    partenaire
+
+-->

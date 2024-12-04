@@ -1,0 +1,86 @@
+etape 1 : Tous les triplets dont l'objet est mariaon_cottillard
+
+etape 2 :
+
+SELECT ?s ?p
+WHERE {
+?s ?p  res:Marion_Cotillard
+}
+
+
+PREFIX rdf  : <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs : < http://www.w3.org/2000/01/rdf-schema#>
+PREFIX res  : <http://dbpedia.org/resource/>
+PREFIX prop : < http://dbpedia.org/property/>
+PREFIX xsd  : <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto : < http://dbpedia.org/ontology/>
+
+etape 3: 
+    a
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX res: <http://dbpedia.org/resource/>
+        PREFIX prop:  <http://dbpedia.org/property/>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        PREFIX onto:  <http://dbpedia.org/ontology/>
+
+        SELECT ?s 
+        WHERE {
+        ?s prop:partner  res:Marion_Cotillard .
+        }
+    b 
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX res: <http://dbpedia.org/resource/>
+        PREFIX prop:  <http://dbpedia.org/property/>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        PREFIX onto:  <http://dbpedia.org/ontology/>
+
+        SELECT ?s 
+        WHERE {
+        { ?s prop:starring  res:Marion_Cotillard } UNION  { ?s onto:starring  res:Marion_Cotillard } 
+
+        }
+
+etape 4:
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX res: <http://dbpedia.org/resource/>
+    PREFIX prop:  <http://dbpedia.org/property/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX onto:  <http://dbpedia.org/ontology/>
+
+    SELECT ?s 
+    WHERE {
+    { ?s prop:starring  res:Marion_Cotillard } UNION  { ?s onto:starring  res:Marion_Cotillard }  UNION  { ?s onto:starring  res:Guillaume_Canet }  UNION  { ?s onto:starring  res:Guillaume_Canet } 
+    }
+
+etape 5 :
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX res: <http://dbpedia.org/resource/>
+    PREFIX prop:  <http://dbpedia.org/property/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX onto:  <http://dbpedia.org/ontology/>
+
+    SELECT ?s 
+    WHERE {
+    { ?s prop:starring  res:Marion_Cotillard .  ?s prop:starring res:Guillaume_Canet  . } UNION {  ?s onto:starring  res:Marion_Cotillard  .  ?s onto:starring res:Guillaume_Canet . }
+    }
+
+etape 6:
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX res: <http://dbpedia.org/resource/>
+        PREFIX prop:  <http://dbpedia.org/property/>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        PREFIX onto:  <http://dbpedia.org/ontology/>
+
+        SELECT ?s ?title
+        WHERE {
+            ?s prop:starring  res:Marion_Cotillard . 
+            ?s prop:starring res:Guillaume_Canet  .
+            ?s rdfs:label ?title .
+        FILTER ( lang(?title) = "fr")
+
+        }
