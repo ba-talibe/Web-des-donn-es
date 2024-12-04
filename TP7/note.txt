@@ -26,7 +26,7 @@ etape 3:
 
         SELECT ?s 
         WHERE {
-        ?s prop:partner  res:Marion_Cotillard .
+            ?s prop:partner  res:Marion_Cotillard .
         }
     b 
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
